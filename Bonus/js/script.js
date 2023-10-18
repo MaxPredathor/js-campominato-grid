@@ -28,6 +28,7 @@ function myCode(){
             myBox.style.width = `calc(100% / ${radiceQ})`;
             myBox.style.height = `calc(100% / ${radiceQ})`;
             myBox.addEventListener('click', function(){
+                console.log(this.innerText);
                 myBox.classList.add('onclick');
                 myBox.style.color = 'black';
                 myBox.style.fontWeight = 'bold';
