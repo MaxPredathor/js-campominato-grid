@@ -30,6 +30,7 @@ function myCode(){
             myBox.addEventListener('click', function(){
                 myBox.classList.add('onclick');
                 myBox.style.color = 'black';
+                myBox.style.fontWeight = 'bold';
             });
             return myBox;
     
