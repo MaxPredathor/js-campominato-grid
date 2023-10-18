@@ -5,30 +5,41 @@ function myCode(){
     
     const btn = document.querySelector('button');
     const playground = document.getElementById('playground');
-    const numeroBoxes = 64;
+    const selector = document.querySelector('select');
 
-    btn.addEventListener('click', function(){
+    selector.addEventListener('change', function(){
 
-        for(let i = 1; i <= numeroBoxes; i++){
-            let x = boxCreation(i);
-            playground.append(x);
-        }
-    });
+        let numeroBoxes = selector.value;
 
-    function boxCreation(myBoxIndex){
-        const myBox = document.createElement('div'); 
-        myBox.classList.add('box');
-        myBox.innerHTML = myBoxIndex;
-        let radiceQ = Math.sqrt(numeroBoxes);
-        myBox.style.width = `calc(100% / ${radiceQ})`;
-        myBox.style.height = `calc(100% / ${radiceQ})`;
-        myBox.addEventListener('click', function(){
-            myBox.classList.add('onclick');
-            myBox.style.color = 'black';
+        btn.addEventListener('click', function(){
+
+            playground.innerHTML = '';
+            for(let i = 1; i <= numeroBoxes; i++){
+                let x = boxCreation(i);
+                playground.append(x);
+            }
         });
-        return myBox;
+    
+        function boxCreation(myBoxIndex){
+            const myBox = document.createElement('div'); 
+            myBox.classList.add('box');
+            myBox.innerHTML = myBoxIndex;
+            let radiceQ = Math.sqrt(numeroBoxes);
+            myBox.style.width = `calc(100% / ${radiceQ})`;
+            myBox.style.height = `calc(100% / ${radiceQ})`;
+            myBox.addEventListener('click', function(){
+                myBox.classList.add('onclick');
+                myBox.style.color = 'black';
+            });
+            return myBox;
+    
+        }
 
-    }
+    })
+
+    
+
+    
     
 
 };
