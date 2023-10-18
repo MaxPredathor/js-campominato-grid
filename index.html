@@ -10,8 +10,15 @@
 <body>
     <div class="wrapper">
         <h1 class="pb-3">Campo Minato</h1>
-        <button class="btn btn-success my-2">Genera</button>
-        <div class="playground"></div>
+        <div>
+            <select name="difficoltà" id="selector" class="form-select" aria-label="Default select example">
+                <option value="49">Easy</option>
+                <option value="81">Medium</option>
+                <option value="100">Hard</option>
+            </select>
+            <button class="btn btn-success my-2">Genera</button>
+        </div>
+        <div id="playground" class="playground"></div>
     </div>
     <script src="js/script.js"></script>
 </body>
